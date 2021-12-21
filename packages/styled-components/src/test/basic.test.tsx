@@ -1,4 +1,7 @@
 /* eslint-disable no-console */
+/**
+ * @jest-environment jsdom
+ */
 import React, { Component, StrictMode } from 'react';
 import { findDOMNode } from 'react-dom';
 import { findRenderedComponentWithType, renderIntoDocument } from 'react-dom/test-utils';

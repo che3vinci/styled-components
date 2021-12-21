@@ -257,6 +257,7 @@ describe('with styles', () => {
         color: 'white',
       },
     };
+    console.log(rule1);
     const Comp = styled.div`
       ${rule1};
     `;

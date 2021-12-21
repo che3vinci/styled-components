@@ -21,6 +21,8 @@ export default function css(
   styles: Styles,
   ...interpolations: Array<Interpolation>
 ): FlattenerResult {
+  console.log(styles)
+  console.log(interpolations, interpolations.name)
   if (isFunction(styles) || isPlainObject(styles)) {
     const styleFunctionOrObject = styles as Function | ExtensibleObject;
 

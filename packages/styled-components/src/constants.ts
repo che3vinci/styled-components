@@ -7,7 +7,7 @@ export const SC_ATTR: string =
 
 export const SC_ATTR_ACTIVE = 'active';
 export const SC_ATTR_VERSION = 'data-styled-version';
-export const SC_VERSION = __VERSION__;
+export const SC_VERSION = '1.0.0';//__VERSION__;
 export const SPLITTER = '/*!sc*/\n';
 
 export const IS_BROWSER = typeof window !== 'undefined' && 'HTMLElement' in window;
@@ -18,16 +18,16 @@ export const DISABLE_SPEEDY = Boolean(
     : typeof process !== 'undefined' &&
       typeof process.env.REACT_APP_SC_DISABLE_SPEEDY !== 'undefined' &&
       process.env.REACT_APP_SC_DISABLE_SPEEDY !== ''
-    ? process.env.REACT_APP_SC_DISABLE_SPEEDY === 'false'
-      ? false
-      : process.env.REACT_APP_SC_DISABLE_SPEEDY
-    : typeof process !== 'undefined' &&
-      typeof process.env.SC_DISABLE_SPEEDY !== 'undefined' &&
-      process.env.SC_DISABLE_SPEEDY !== ''
-    ? process.env.SC_DISABLE_SPEEDY === 'false'
-      ? false
-      : process.env.SC_DISABLE_SPEEDY
-    : process.env.NODE_ENV !== 'production'
+      ? process.env.REACT_APP_SC_DISABLE_SPEEDY === 'false'
+        ? false
+        : process.env.REACT_APP_SC_DISABLE_SPEEDY
+      : typeof process !== 'undefined' &&
+        typeof process.env.SC_DISABLE_SPEEDY !== 'undefined' &&
+        process.env.SC_DISABLE_SPEEDY !== ''
+        ? process.env.SC_DISABLE_SPEEDY === 'false'
+          ? false
+          : process.env.SC_DISABLE_SPEEDY
+        : process.env.NODE_ENV !== 'production'
 );
 
 // Shared empty execution context when generating static styles

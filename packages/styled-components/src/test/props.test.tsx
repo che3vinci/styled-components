@@ -14,6 +14,7 @@ describe('props', () => {
       color: ${props => props.fg || 'black'};
     `;
     TestRenderer.create(<Comp />);
+    // console.log(document.body)
     expect(getRenderedCSS()).toMatchInlineSnapshot(`
       ".b {
         color: black;

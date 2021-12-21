@@ -9,4 +9,5 @@ module.exports = Object.assign({}, baseConfig, {
   setupFilesAfterEnv: ['<rootDir>/test-utils/setupTestFramework.ts'],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['<rootDir>/src/native', '<rootDir>/src/primitives'],
+  testRegex: '(\\.(test|spec))\\.(jsx?|tsx?|mjs)$',
 });

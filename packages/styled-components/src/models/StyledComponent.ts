@@ -7,7 +7,7 @@ import type {
   IStyledComponent,
   IStyledComponentFactory,
   IStyledStatics,
-  WebTarget,
+  WebTarget
 } from '../types';
 import { checkDynamicCreation } from '../utils/checkDynamicCreation';
 import createWarnTooManyClasses from '../utils/createWarnTooManyClasses';
@@ -141,8 +141,8 @@ function useStyledComponentImpl(
       shouldForwardProp
         ? shouldForwardProp(key, validAttr, elementToBeCreated)
         : isTargetTag
-        ? validAttr(key)
-        : true
+          ? validAttr(key)
+          : true
     ) {
       // Don't pass through non HTML tags through to HTML elements
       propsForElement[key] = computedProps[key];
@@ -156,7 +156,7 @@ function useStyledComponentImpl(
   propsForElement[
     // handle custom elements which React doesn't properly alias
     isTargetTag &&
-    domElements.indexOf(elementToBeCreated as unknown as Extract<typeof domElements, string>) === -1
+      domElements.indexOf(elementToBeCreated as unknown as Extract<typeof domElements, string>) === -1
       ? 'class'
       : 'className'
   ] = (foldedComponentIds as string[])
@@ -175,6 +175,9 @@ function useStyledComponentImpl(
 }
 
 const createStyledComponent: IStyledComponentFactory = (target, options, rules) => {
+  console.log(target)
+  console.log(options)
+  rules
   const isTargetStyledComp = isStyledComponent(target);
   const styledComponentTarget = target as IStyledComponent;
   const isCompositeComponent = !isTag(target);
@@ -275,6 +278,7 @@ const createStyledComponent: IStyledComponentFactory = (target, options, rules) 
     },
 
     set(obj) {
+      console.log(isTargetStyledComp)
       this._foldedDefaultProps = isTargetStyledComp
         ? merge({}, styledComponentTarget.defaultProps, obj)
         : obj;
